@@ -38,9 +38,8 @@ task unpack(type: Copy) {
 	from(zipTree(tasks.bootJar.outputs.files.singleFile))
 	into("build/dependency")
 }
-
 docker {
-	name 'hub.docker.com/bingbo/helloworld:version'
+	name 'hub.docker.com/bingbo/kubepi-helloworld:0.1.0'
 	copySpec.from(tasks.unpack.outputs).into("dependency")
 	buildArgs(['DEPENDENCY': "dependency"])
 }
