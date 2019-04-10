@@ -39,7 +39,7 @@ task unpack(type: Copy) {
 	into("build/dependency")
 }
 docker {
-	name 'hub.docker.com/bingbo/kubepi-helloworld:0.1.0'
+	name 'hub.docker.com/r/bingbo/kubepi-helloworld:latest'
 	copySpec.from(tasks.unpack.outputs).into("dependency")
 	buildArgs(['DEPENDENCY': "dependency"])
 }
