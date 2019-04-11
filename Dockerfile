@@ -1,4 +1,4 @@
-FROM hypriot/rpi-java
+FROM balenalib/raspberrypi3-debian-openjdk:7-jessie
 ENV PORT 8080
 EXPOSE 8080
 VOLUME /tmp
