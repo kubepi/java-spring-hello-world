@@ -6,4 +6,7 @@ ARG DEPENDENCY=build/dependency
 COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY ${DEPENDENCY}/META-INF /app/META-INF
 COPY ${DEPENDENCY}/BOOT-INF/classes /app
-CMD ["java", "-jar", "app.jar"]
+ARG LIBS=build/libs
+RUN mkdir /dist
+COPY ${LIBS} /dist
+CMD ["java", "-jar", "/dist/helloworld-spring-boot-0.0.1-SNAPSHOT.jar"]
