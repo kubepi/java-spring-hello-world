@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3-debian-openjdk:7-jessie
+FROM balenalib/raspberrypi3-debian-openjdk:8-jdk-stretch-build
 ENV PORT 8080
 EXPOSE 8080
 VOLUME /tmp
