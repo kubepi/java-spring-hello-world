@@ -8,6 +8,7 @@ spec:
     metadata:
       labels:
         app: hello-world
+        blinkt: show
     spec:
       containers:
       - name: hello-world-pod
