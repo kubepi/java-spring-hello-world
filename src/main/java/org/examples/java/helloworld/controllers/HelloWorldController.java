@@ -8,6 +8,13 @@ public class HelloWorldController {
 
     @GetMapping("/")
     public String helloWorld() {
-        return "Hello Kubernetes World!";
+        String podName = System.getenv("POD_NAME");
+        String podNamespace = System.getenv("POD_NAMESPACE");
+        String podIp = System.getenv("POD_IP");
+
+        return "Hello Kubernetes World! Currently saying hello from: \n"
+                + "Pod Name: " + podName + " \n"
+                + "Pod Namespace: " + podNamespace + " \n"
+                + "Pod IP Address: " + podIp + " \n";
     }
 }
